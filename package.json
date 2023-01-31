@@ -1,6 +1,6 @@
 {
   "name": "handy-wrap",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "",
   "main": "./cjs/index.js",
   "scripts": {
@@ -10,7 +10,11 @@
     "test": "c8 node test/index.js",
     "coverage": "mkdir -p ./coverage; c8 report --reporter=text-lcov > ./coverage/lcov.info"
   },
-  "keywords": ["proxy", "jQuery", "EventTarget"],
+  "keywords": [
+    "proxy",
+    "jQuery",
+    "EventTarget"
+  ],
   "author": "Andrea Giammarchi",
   "license": "ISC",
   "types": "./types/index.d.ts",
