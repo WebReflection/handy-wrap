@@ -1,6 +1,8 @@
 # handy-wrap
 
-A generic `EventTarget` Proxy wrapper to chain and/or group common operations.
+[![build status](https://github.com/WebReflection/handy-wrap/actions/workflows/node.js.yml/badge.svg)](https://github.com/WebReflection/handy-wrap/actions) [![Coverage Status](https://coveralls.io/repos/github/WebReflection/handy-wrap/badge.svg?branch=main)](https://coveralls.io/github/WebReflection/handy-wrap?branch=main)
+
+A generic `EventTarget` Proxy wrapper to chain and/or group common operations, used to showcase [this blog post](https://webreflection.medium.com/taming-the-web-speech-api-ef64f5a245e1) code.
 
 ### Single
   * `$('css'[, parent])` to query the document and handle a single reference
