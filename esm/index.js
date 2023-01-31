@@ -41,21 +41,11 @@ const handler = {
 const query = (target, name, parent = document) =>
   typeof target === 'string' ? parent[name](target) : target.valueOf();
 
-/**
- * Proxy a single target
- * @param {EventTarget | string} target the single target to wrap
- * @param {Document | Element} [parent] the optional parent to query
- */
 export const $ = (target, parent) => new Proxy(
   {_: 1, $: [query(target, 'querySelector', parent)]},
   handler
 );
 
-/**
- * Proxy a list of targets
- * @param {EventTarget[] | string} target the multiple targets to wrap
- * @param {Document | Element} [parent] the optional parent to query
- */
 export const $$ = (target, parent) => new Proxy(
   {_: 0, $: query(target, 'querySelectorAll', parent)},
   handler
