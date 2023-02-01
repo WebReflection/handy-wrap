@@ -24,3 +24,26 @@ A generic `EventTarget` Proxy wrapper to chain and/or group common operations, u
   * `$$([...t]).method(...args)` to invoke all (bound) methods and chain the proxy
   * `$$([...t]).valueOf()` to retrieve the list of references
   * `$$([...t]).length` to retrieve the `length` of the list
+
+### Plugins
+
+This module exports a `plugins` *Map* to enhance the utilities as needed.
+
+```js
+import {$, plugins} from 'handy-wrap';
+
+const html = Symbol('html');
+
+plugins.set(html, (value, name, proxy) => {
+  const output = [];
+  for (const node of (value instanceof NodeList ? value : [value]))
+    output.push(node.outerHTML);
+  return output.join('');
+});
+
+// returns the document.body HTML
+$('body')[html];
+
+// returns all <LI> as HTML
+$$('li')[html];
+```

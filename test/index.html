@@ -7,11 +7,11 @@
   <script type="module">
   import(
     /^(?:localhost|[::1]|127(?:.d+){3})$/.test(location.hostname) ?
-    '../esm/index.js' :
+    '../es.js' :
     'https://unpkg.com/handy-wrap?module'
   )
   .then((module) => {
-    console.log(module);
+    console.log(globalThis.module = module);
   });
   </script>
 </head>

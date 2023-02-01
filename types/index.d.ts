@@ -43,4 +43,13 @@ declare function $$(css: string, parent: Document | Element): Wrap<NodeList>;
  */
 declare function $$<T>(target: T): Wrap<T>;
 
+export const plugins:Map<
+  string,
+  (
+    wrapped: object | NodeList,
+    name: string,
+    proxy: ProxyHandler<object | NodeList>
+  ) => object
+>;
+
 export {$, $$};

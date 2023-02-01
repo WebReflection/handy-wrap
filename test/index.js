@@ -1,4 +1,4 @@
-import {$, $$} from '../esm/index.js';
+import {$, $$, plugins} from '../esm/index.js';
 const assert = (current, expected) => {
   if (current !== expected) {
     console.error('got', current, 'expected', expected);
@@ -37,3 +37,12 @@ assert(o.length, -1);
 assert(oo.length, 2);
 
 delete globalThis.document;
+
+plugins.set('random', (value, name, proxy) => {
+  assert(value, Array);
+  assert(name, 'random');
+  assert(proxy.valueOf(), value);
+  return Math.random();
+});
+
+assert(typeof $(Array).random, 'number');

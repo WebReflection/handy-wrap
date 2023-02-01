@@ -2,8 +2,14 @@
 
 const {iterator} = Symbol;
 
+export const plugins = new Map;
+
+const valueOf = (_, $) => _ ? $.at(0) : $;
+
 const handler = {
   get({_, $}, name, proxy) {
+    if (plugins.has(name))
+      return plugins.get(name)(valueOf(_, $), name, proxy);
     switch (name) {
       case iterator: return $[iterator].bind($);
       case 'emit': return (type, ...args) => {
@@ -11,8 +17,8 @@ const handler = {
           $[i].dispatchEvent(new Event(type, ...args));
         return proxy;
       };
-      case 'length': return _ ? $.at(0)?.length : $.length;
-      case 'valueOf': return () => _ ? $.at(0) : $;
+      case 'length': return valueOf(_, $)?.length;
+      case 'valueOf': return () => valueOf(_, $);
       case 'on': name = 'addEventListener';
       default: {
         let value;
@@ -38,7 +44,7 @@ const handler = {
   }
 };
 
-const query = (target, name, parent = document) =>
+const query = (target, name, parent = globalThis.document) =>
   typeof target === 'string' ? parent[name](target) : target.valueOf();
 
 export const $ = (target, parent) => new Proxy(
