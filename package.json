@@ -1,6 +1,6 @@
 {
   "name": "handy-wrap",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A generic EventTarget Proxy wrapper to chain and/or group common operations",
   "main": "./cjs/index.js",
   "scripts": {
