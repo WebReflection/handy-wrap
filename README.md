@@ -6,6 +6,8 @@
 
 A generic `EventTarget` Proxy wrapper to chain and/or group common operations, used to showcase [this blog post](https://webreflection.medium.com/taming-the-web-speech-api-ef64f5a245e1) code.
 
+This module is *450 bytes* once minified (plus brotli).
+
 ### Single
   * `$('css'[, parent])` to query the document and handle a single reference
   * `$(target)` to wrap directly an *EventTarget* implemented interface
@@ -32,7 +34,8 @@ A generic `EventTarget` Proxy wrapper to chain and/or group common operations, u
 This module exports a `plugins` *Map* to enhance the utilities as needed.
 
 ```js
-import {$, plugins} from 'handy-wrap';
+// import {$, $$, plugins} from 'https://unpkg.com/handy-wrap';
+import {$, $$, plugins} from 'handy-wrap';
 
 const html = Symbol('html');
 
