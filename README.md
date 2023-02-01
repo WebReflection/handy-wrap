@@ -2,6 +2,8 @@
 
 [![build status](https://github.com/WebReflection/handy-wrap/actions/workflows/node.js.yml/badge.svg)](https://github.com/WebReflection/handy-wrap/actions) [![Coverage Status](https://coveralls.io/repos/github/WebReflection/handy-wrap/badge.svg?branch=main)](https://coveralls.io/github/WebReflection/handy-wrap?branch=main)
 
+<sup>**Social Media Photo by [Rudy Dong](https://unsplash.com/@mrdongok) on [Unsplash](https://unsplash.com/)**</sup>  
+
 A generic `EventTarget` Proxy wrapper to chain and/or group common operations, used to showcase [this blog post](https://webreflection.medium.com/taming-the-web-speech-api-ef64f5a245e1) code.
 
 ### Single
