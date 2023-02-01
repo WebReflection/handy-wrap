@@ -1,7 +1,7 @@
 {
   "name": "handy-wrap",
   "version": "0.2.1",
-  "description": "",
+  "description": "A generic EventTarget Proxy wrapper to chain and/or group common operations",
   "main": "./cjs/index.js",
   "scripts": {
     "build": "npm run cjs && npm run rollup:es && npm run test && npm run size",
@@ -35,5 +35,13 @@
     },
     "./package.json": "./package.json"
   },
-  "unpkg": "es.js"
+  "unpkg": "es.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebReflection/handy-wrap.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WebReflection/handy-wrap/issues"
+  },
+  "homepage": "https://github.com/WebReflection/handy-wrap#readme"
 }
